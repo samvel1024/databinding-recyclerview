@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements MainViewModel.Vie
     public void onItemClicked(ListItemViewModel item) {
         Toast.makeText(
                 this,
-                String.format("Calling to %s %s", item.getName(), item.getSurname()),
+                String.format("Buying %s for %s", item.getName(), item.getPrice()),
                 Toast.LENGTH_SHORT
         ).show();
     }

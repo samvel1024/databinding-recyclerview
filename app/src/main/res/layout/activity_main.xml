@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.samvel1024.databindingrv_sample.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,13 +10,31 @@
     </data>
 
 
-    <com.samvel1024.databindingrv.BindingRecyclerView
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="1dp"
-        custom:layoutManager="LinearLayoutManager"
-        custom:viewModelList="@{viewModel.itemViewModels}"
-        custom:bindingVarPath="com.samvel1024.databindingrv_sample.BR.viewModel"
-        custom:itemLayoutResId="@layout/list_item" />
+        android:fitsSystemWindows="true">
+
+        <com.samvel1024.databindingrv.BindingRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            app:bindingVarPath="com.samvel1024.databindingrv_sample.BR.viewModel"
+            app:itemLayoutResId="@layout/list_item"
+            app:layoutManager="LinearLayoutManager"
+            app:viewModelList="@{viewModel.itemViewModels}" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:onClick="@{() -> viewModel.onAddItemClicked()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_playlist_add_black_18dp" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
 
 </layout>

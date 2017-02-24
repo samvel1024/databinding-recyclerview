@@ -8,16 +8,16 @@ package com.samvel1024.databindingrv_sample;
 public class ListItemViewModel {
 
     private final String name;
-    private final String surname;
+    private final String price;
     private final MainViewModel.View view;
 
-    public ListItemViewModel(MainViewModel.View view, String name, String surname) {
+    public ListItemViewModel(MainViewModel.View view, String name, String price) {
         this.name = name;
-        this.surname = surname;
+        this.price = price;
         this.view = view;
     }
 
-    public void onCallButtonClicked(){
+    public void onBuyButtonClicked(){
         view.onItemClicked(this);
     }
 
@@ -25,7 +25,7 @@ public class ListItemViewModel {
         return name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getPrice() {
+        return price;
     }
 }
