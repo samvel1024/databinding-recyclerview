@@ -13,18 +13,15 @@ import java.util.List;
 
 public class MainViewModel extends BaseObservable {
 
-
     private List<ListItemViewModel> viewModels;
-    private final View view;
 
-    public MainViewModel(View view) {
+    public MainViewModel() {
         viewModels = new ArrayList<>(Arrays.asList(
-                new ListItemViewModel(view, "Toyota Camry", "34000$"),
-                new ListItemViewModel(view, "Honda Civic", "32000$"),
-                new ListItemViewModel(view, "BMW M3", "85000$"),
-                new ListItemViewModel(view, "Volkswagen Golf", "40000$")
+                new ListItemViewModel("Toyota Camry", "34000$"),
+                new ListItemViewModel("Honda Civic", "32000$"),
+                new ListItemViewModel("BMW M3", "85000$"),
+                new ListItemViewModel("Volkswagen Golf", "40000$")
         ));
-        this.view = view;
     }
 
     @Bindable
@@ -32,14 +29,9 @@ public class MainViewModel extends BaseObservable {
         return viewModels;
     }
 
-    public void onAddItemClicked(){
-        viewModels.add(new ListItemViewModel(view, "A new car", "80000$"));
+    public void onAddItemClicked() {
+        viewModels.add(new ListItemViewModel("A new car", "80000$"));
         notifyPropertyChanged(BR.itemViewModels);
-    }
-
-
-    interface View {
-        void onItemClicked(ListItemViewModel item);
     }
 
 }

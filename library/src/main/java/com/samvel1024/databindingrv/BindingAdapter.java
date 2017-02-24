@@ -16,8 +16,8 @@ public class BindingAdapter<VDB extends ViewDataBinding> extends RecyclerView.Ad
     private ItemViewModelInitializer<VDB> vmProvider;
     private int layoutResId;
 
-    public BindingAdapter(@LayoutRes int layoutResId, ItemViewModelInitializer<VDB> vmProvider) {
-        this.vmProvider = vmProvider;
+    public BindingAdapter(@LayoutRes int layoutResId, ItemViewModelInitializer<VDB> itemInitializer) {
+        this.vmProvider = itemInitializer;
         this.layoutResId = layoutResId;
     }
 
