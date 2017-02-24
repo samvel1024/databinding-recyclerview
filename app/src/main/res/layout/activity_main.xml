@@ -8,16 +8,17 @@
 
         <variable
             name="viewModel"
-            type="com.samvel1024.databindingrv_sample.MainViewModel"/>
+            type="com.samvel1024.databindingrv_sample.MainViewModel" />
     </data>
-
 
 
     <com.samvel1024.databindingrv.BindingRecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        custom:itemLayoutResId="@layout/list_item"
+        android:layout_margin="1dp"
+        custom:layoutManager="LinearLayoutManager"
+        custom:viewModelList="@{viewModel.itemViewModels}"
         custom:bindingVarPath="com.samvel1024.databindingrv_sample.BR.viewModel"
-        />
+        custom:itemLayoutResId="@layout/list_item" />
 
 </layout>

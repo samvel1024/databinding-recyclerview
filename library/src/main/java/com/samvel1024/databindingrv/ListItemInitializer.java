@@ -11,7 +11,7 @@ import java.util.List;
 public class ListItemInitializer implements ItemViewModelInitializer<ViewDataBinding> {
 
 
-    private final List<?> viewModelList;
+    private List<?> viewModelList;
     private final int bindingVarId;
 
     public ListItemInitializer(List<?> viewModelList, int bindingVarId){
@@ -29,4 +29,11 @@ public class ListItemInitializer implements ItemViewModelInitializer<ViewDataBin
         return viewModelList.size();
     }
 
+    public void setViewModelList(List<?> viewModelList){
+        this.viewModelList = viewModelList;
+    }
+
+    public List<?> getViewModelList() {
+        return viewModelList;
+    }
 }

@@ -25,7 +25,7 @@ class Configurer {
     void configure() {
         if (attrs == null)
             return;
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.RecycleListView, 0, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, new int[]{R.attr.itemLayoutResId, R.attr.bindingVarPath});
         try {
             configureDataBindingVarId(typedArray);
             configureRowResourceId(typedArray);

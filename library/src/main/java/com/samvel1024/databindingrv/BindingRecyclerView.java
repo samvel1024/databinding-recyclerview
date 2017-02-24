@@ -14,10 +14,9 @@ import java.util.List;
 
 public class BindingRecyclerView extends RecyclerView {
 
-    private List<?> viewModelList;
     @LayoutRes
     private int itemLayoutResId;
-    private BindingAdapter<?> bindingAdapter;
+    private ListItemInitializer itemInitializer;
     private int bindingVarId;
 
     public BindingRecyclerView(Context context) {
@@ -38,29 +37,32 @@ public class BindingRecyclerView extends RecyclerView {
         if (!(adapter instanceof BindingAdapter))
             throw new IllegalStateException("BindingRecyclerView operates only on BindingAdapter");
         super.setAdapter(adapter);
-        this.bindingAdapter = (BindingAdapter<?>) adapter;
     }
 
     @Override
     public BindingAdapter<?> getAdapter() {
-        return bindingAdapter;
+        return (BindingAdapter<?>) super.getAdapter();
     }
 
-    public void setBindingVarId(int bindingVarId){
+    void setBindingVarId(int bindingVarId){
         this.bindingVarId = bindingVarId;
     }
 
     public void setViewModelList(List<?> viewModelList) {
         if (viewModelList == null)
             throw new IllegalArgumentException("viewModelList cannot be null");
-        if (this.bindingAdapter == null) {
-            this.viewModelList = viewModelList;
-            setAdapter(new BindingAdapter<>(itemLayoutResId, new ListItemInitializer(viewModelList, bindingVarId)));
+        if (this.itemInitializer == null) {
+            this.itemInitializer = new ListItemInitializer(viewModelList, bindingVarId);
+            setAdapter(new BindingAdapter<>(itemLayoutResId, itemInitializer));
+            return;
         }
-        else this.bindingAdapter.notifyDataSetChanged();
+        if (viewModelList != this.itemInitializer.getViewModelList()){
+            itemInitializer.setViewModelList(viewModelList);
+        }
+        getAdapter().notifyDataSetChanged();
     }
 
-    public void setItemLayoutResId(@LayoutRes int itemLayoutResId) {
+    void setItemLayoutResId(@LayoutRes int itemLayoutResId) {
         this.itemLayoutResId = itemLayoutResId;
     }
 
