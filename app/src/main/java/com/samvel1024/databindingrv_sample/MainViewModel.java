@@ -34,7 +34,6 @@ public class MainViewModel extends BaseObservable {
 
     public void onAddItemClicked(){
         viewModels.add(new ListItemViewModel(view, "A new car", "80000$"));
-        this.viewModels = new ArrayList<>(viewModels);
         notifyPropertyChanged(BR.itemViewModels);
     }
 
