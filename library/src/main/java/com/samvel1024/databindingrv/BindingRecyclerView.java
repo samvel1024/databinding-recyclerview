@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -50,7 +51,7 @@ public class BindingRecyclerView extends RecyclerView {
 
     public void setViewModelList(List<?> viewModelList) {
         if (viewModelList == null)
-            throw new IllegalArgumentException("viewModelList cannot be null");
+            viewModelList = Collections.emptyList();
         if (this.itemInitializer == null) {
             this.itemInitializer = new ListItemInitializer(viewModelList, bindingVarId);
             setAdapter(new BindingAdapter<>(itemLayoutResId, itemInitializer));
