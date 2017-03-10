@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'data-binding-recyclerview'
     bintrayName = 'data-binding-recyclerview'
 
     publishedGroupId = 'com.samvel1024.databindingrv'
