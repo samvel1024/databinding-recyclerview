@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'data-binding-recyclerview'
+
+    publishedGroupId = 'com.samvel1024.databindingrv'
+    libraryName = 'Data Binding Recycler View'
+    artifact = 'data-binding-recyclerview'
+
+    libraryDescription = 'Recycler view adopted for usage along with Android data binding'
+
+    siteUrl = 'https://github.com/samvel1024/databinding-recyclerview'
+    gitUrl = 'https://github.com/samvel1024/databinding-recyclerview.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'samvel1024'
+    developerName = 'Samvel Abrahamyan'
+    developerEmail = 'samvel1024@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -9,7 +33,6 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -37,3 +60,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
 }
+
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
