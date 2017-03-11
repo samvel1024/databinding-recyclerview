@@ -2,6 +2,10 @@
 
 BindingRecyclerView is a RecyclerView implementation which integrates with the android data binding library and does not need any exlicit implementation of the adapter. It can be configurred from xml view declaration.
 
+### Gradle 
+    compile 'com.samvel1024.databindingrv:data-binding-recyclerview:0.0.3'
+
+
 ### Usage example
 
 Declare the BindingRecycleView as the following
