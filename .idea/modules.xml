@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-binding-recyclerview/data-binding-recyclerview.iml" filepath="$PROJECT_DIR$/data-binding-recyclerview/data-binding-recyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/databinding-recyclerview.iml" filepath="$PROJECT_DIR$/databinding-recyclerview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>
