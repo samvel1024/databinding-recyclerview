@@ -28,8 +28,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     compile 'com.samvel1024.databindingrv:data-binding-recyclerview:0.0.3'
     compile 'com.android.support:appcompat-v7:25.2.0'
+
     testCompile 'junit:junit:4.12'
     compile project(':data-binding-recyclerview')
 }
