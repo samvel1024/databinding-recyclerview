@@ -6,7 +6,7 @@ BindingRecyclerView is a RecyclerView implementation which integrates with the a
     compile 'com.samvel1024.databindingrv:data-binding-recyclerview:0.0.3'
 
 
-### Usage example
+### SMEHSNS lav diq ka karoxa likes , bvct
 
 Declare the BindingRecycleView as the following
 
@@ -144,7 +144,7 @@ Now create the MainViewModel class and bind it to the view
             binding.setViewModel(new MainViewModel());
         }
 
-### Configuring BindingRecyclerView
+### ARA BVCT ARA, inch ka smehsns
 
 There are 3 required arguemnts to have in the xml declaration
 
